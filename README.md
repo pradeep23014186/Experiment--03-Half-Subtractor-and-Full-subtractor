@@ -1,4 +1,4 @@
-# Experiment--03-Half-Subtractor-and-Full-subtractor
+# Experiment--04-Half-Subtractor-and-Full-subtractor
 ## Implementation-of-Half-subtractor-and-Full-subtractor-circuit
 ## AIM:
 To design a half subtractor and full subtractor circuit and verify its truth table in Quartus using Verilog programming.
@@ -26,29 +26,56 @@ A full subtractor is a combinational circuit that performs subtraction involving
 Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ## Procedure
+*Connect the supply (+5V) to the circuit.
 
+*Switch ON the main switch.
 
-
-Write the detailed procedure here 
-
+*If the output is 1, then the led glows.
 
 ## Program:
-/*
+```
+Developed by: Pradeep Kumar.G
+RegisterNumber:  23014186
+```
+```
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+1. Program to design a half subtractor:
+module ex4(a,b,diff,borr);
+input a,b;
+output diff,borr;
+assign diff=(a^b);
+assign borr=((~a)&b);
+endmodule 
+2. Program to design a full subtractor:
+module ex41(a,b,bin,diff,borr);
+input a,b,bin;
+output diff,borr;
+assign diff=a^b^bin;
+assign borr=((~a)&b)|(b&bin)|((~a)&bin);
+endmodule
+```
 
 ## Output:
 
-## Truthtable
+## Truthtable:
+## HALF SUBTRACTOR
+![image](https://github.com/pradeep23014186/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/152294642/94d2eea5-b498-4554-be8c-17b4f5824c7d)
+## FULL SUBTRACTOR:
+![image](https://github.com/pradeep23014186/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/152294642/dc886014-f38c-4fea-91a2-f2a62e233af7)
+
+##  RTL realization:
+## HALF SUBTRACTOR
+![image](https://github.com/pradeep23014186/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/152294642/ef7ca491-54c2-4328-9e80-a767f8551e62)
+## FULL SUBTRACTOR
+![image](https://github.com/pradeep23014186/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/152294642/1cd905f9-892d-41bc-ace0-04affd4f711e)
 
 
+## Timing diagram:
+## HALF SUBTRACTOR
+![image](https://github.com/pradeep23014186/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/152294642/5f9a46b7-8e47-4158-b703-af17ddbd9301)
+## FULL SUBTRACTOR
+![image](https://github.com/pradeep23014186/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/152294642/f5f3f020-c23e-4127-be6c-62f17b84cbc2)
 
-##  RTL realization
-
-
-## Timing diagram 
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
